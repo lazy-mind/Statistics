@@ -17,3 +17,8 @@
 * [Time Series with Leading Indicators](time-series/time-series-with-leading-indicators.md)
 * [Relationship between Time-Series](time-series/untitled.md)
 
+---
+
+* [Econometrics](econometrics/README.md)
+  * [R Package Used](econometrics/r-package-used.md)
+

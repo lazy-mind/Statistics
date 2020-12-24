@@ -10,6 +10,7 @@
   * [Basic Theories](basic-statistics/low-level-undergrad-statistics/untitled.md)
 * [Advance Undergrad Statistics](basic-statistics/advance-undergrad-statistics.md)
 * [Statistics Figure](basic-statistics/statistics-figure.md)
+* [Untitled](basic-statistics/untitled.md)
 
 ## Time Series
 
@@ -24,4 +25,8 @@
 
 * [Econometrics](econometrics/README.md)
   * [R Package Used](econometrics/r-package-used.md)
+
+## Regression
+
+* [Linear Regression](regression/linear-regression.md)
 

@@ -20,3 +20,25 @@ $$\begin{array}{l} s=3,4,5 \ldots \\ \phi_{s j}=\phi_{s-1, j}-\phi_{s s} \phi_{s
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="Thiel\'s U Statistics" %}
+compares:  
+1. forecasted result  
+2. forecasted result based on last period
+
+it squre the deviations to give more weight to large errors:
+
+$$\sqrt{\frac{\sum_{t=1}^{n-1}\left(\frac{Y_{t+1}^{*}-Y_{t+1}}{Y_{t}}\right)^{2}}{\sum_{t=1}^{n-1}\left(\frac{Y_{t+1}-Y_{t}}{Y_{t}}\right)^{2}}}$$ 
+
+Result Analysis:
+
+* Less than 1 – The forecasting technique is better than guessing.
+* Equal to 1 – The forecasting technique is about as good as guessing.
+* More than 1 – The forecasting technique is worse than guessing.
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+

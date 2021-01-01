@@ -15,7 +15,8 @@
 ## Time Series
 
 * [Time Series Common Analysis](time-series/time-series-common-analysis/README.md)
-  * [Making sense of the concepts](time-series/time-series-common-analysis/making-sense-of-the-concepts.md)
+  * [Basic Concepts](time-series/time-series-common-analysis/basic-concepts.md)
+  * [ARCH & GARCH model](time-series/time-series-common-analysis/arch-and-garch-model.md)
   * [Math Definition of concepts](time-series/time-series-common-analysis/math-definition-of-concepts.md)
   * [Common Mistakes in analyzing time series](time-series/time-series-common-analysis/common-mistakes-in-analyzing-time-series.md)
 * [Time Series with Leading Indicators](time-series/time-series-with-leading-indicators.md)

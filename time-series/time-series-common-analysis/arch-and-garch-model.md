@@ -60,7 +60,38 @@ We study the easiest one, ARCH\(1\), and we can do the following analysis:
 
 {% tabs %}
 {% tab title="First Tab" %}
+### TGARCH & EGARCH
 
+**T-GARCH \(Threshold-GARCH\)**: A piece of "bad news", or a negative return, such as a drop in the stock price, reduces the value of equity relative to the fixed value of debt of that firm according to Enders \(2014\). The opposite effect will also be present - an increase in the stock price reduces leverage and risk.
+
+* $$h_{t}=\omega+\alpha_{1} u_{t-1}^{2}+\gamma_{1} d_{t-1} u_{t-1}^{2}+\beta_{1} h_{t-1}$$ 
+* $$d_{t-1} = 0, \text{ if } \varepsilon_{t-1} >0.  \text{ positive shock will not bring much impact}$$ 
+* $$d_{t-1} = 1, \text{ if } \varepsilon_{t-1} <0.  \text{ negative shock will have larger impact}$$ 
+
+**EGARCH:** model employs a logarithmic transformation to $h_{t}$ to ensure positive variances \(in all the other models, all the estimated coefficients need to be positive, which is not the case here\) as well as working in the levels of the residuals \(not their squares\) and additionally, standardizing by their standard deviation $\sqrt{h_{t}}$.
+
+* $$\ln \left(h_{t}\right)=\omega+\alpha_{1} \frac{u_{t-1}}{\sqrt{h_{t-1}}}+\gamma_{1}\left|\frac{u_{t-1}}{\sqrt{h_{t-1}}}\right|+\beta_{1} \ln \left(h_{t-1}\right)$$ 
+* \text { if } u_{t-1}&gt;0 \text { its impact on } \ln \left\(h_{t}\right\) \text { is } \alpha_{1}+\gamma_{1}
+* \text { If } u\_{t-1}&lt;0 \text { its impact is } \ln \left\(h_{t}\right\) \text { is }-\alpha_{1}+\gamma\_{1}
+
+### IGARCH
+{% endtab %}
+
+{% tab title="Example" %}
+Let's take a look at example GARCH\(1,1\)
+
+* $$\sigma_{t}^{2}=\omega+\alpha \varepsilon_{t-1}^{2}+\beta \sigma_{t-1}^{2}$$ 
+
+Interpretation of the parameters:
+
+* $$\omega, \alpha \text { and } \beta \text { must be positive with } \alpha+\beta<1$$ 
+* $$\alpha$$ is a reaction parameter. High $$\alpha$$ is generally associated with spiky or nervous market while low $$\alpha$$ indicates stable market. 
+  * Alexander \(2008\) considers that for daily data used in GARCH model, $$\alpha$$ generally ranges from 0.05 \(stable market\) to 0.10 for a spiky one.
+* $$\beta$$ indicates volatility persistence \(how much from past volatility is transferred into current volatility\). High $$\beta$$ means high persistency and therefore volatility clustering appears. 
+  * $$\beta$$ generally takes values from 0.85 to 0.98 for daily data used in the model according to Alexander \(2008\).
+* Low $$\alpha$$ values are associated with high $$\beta$$ 
+* high $$\alpha$$ is connected to low $$\beta$$ 
+* $$\frac{\omega}{1-\alpha-\beta}->\text { unconditional variance }$$ 
 {% endtab %}
 
 {% tab title="MLE of Linear Regression" %}
@@ -100,7 +131,33 @@ The problem of solving the estimator is:
 2. There are no simple solutions to the first-order conditions for a maximum
 3. Computers are able to select parameter values that maximize log likelihood
 {% endtab %}
+
+{% tab title="GARCH-M" %}
+The GARCH-in-mean or GARCH-M model addresses the limitations of standard ARCH / GARCH models which do not allow the realization of the conditional variance process to affect the conditional expectation. It can be established that during a financial crisis, the returns on many assets are lower than in more tranquil times. Alternatively, an asset that is systematically riskier than another must offer a higher return to be invested in.
+
+GARCH\(1,1\)-M: $$\begin{array}{c} r_{t}=\mu+c \sigma_{t-1}^{2}+u_{t} \\ \\ u_{t}=\varepsilon_{t} \sqrt{h_{t}} \\ \\ h_{t}=\omega+\alpha_{1} u_{t-1}^{2}+\beta_{1} h_{t-1} \end{array}$$ 
+
+If $c$ is significantly positive, it can be considered a "risk premium" for the asset in times when it is more volatile. Other alternatives are to use just the conditional standard deviation $\sigma\_{t}$ or the log of the variance in the mean equation.
+{% endtab %}
+
+{% tab title="" %}
+
+{% endtab %}
 {% endtabs %}
 
+## Kalman Filter
 
+$$x_{t}=F_{t} \times x_{t-1}+B_{t} \times u_{t}+w_{t}$$ 
+
+* $$x_{t}$$ - state vector containing the terms of interest for the system \(volatility of returns\) at time $$t$$ 
+* $$u_t$$ the vector containing any control inputs \(steering angle for example at physics\) 
+* $$f_{t}$$ - state transition matrix which applies the effect of each system state parameter at time $$t-1$$ on the system state at time $$t$$ \(example the position and velocity at time $$t-1$$ both affect the position at time $$t$$ \)
+* $$b_{t}$$ - the control-input matrix which applies the effect of each control input parameter in the vector $$u_t$$ on the state vector 
+* $$w_t $$ - the vector containing the process noise terms for each parameter in the state vector. $$w_{t} \sim N\left(0, Q_{t}\right)$$ 
+
+An observation \(or measurement\) $$z_{t}$$ _of the true state_ $$x_t$$  is made according to:
+
+$$z_{t}=H_{t} x_{t}+v_{t}$$ 
+
+* where $$H_t$$ _is the observation model which maps the true state space into the observed space and_ $$v_t$$ is the observation noise which is assumed to be zero-mean Gaussian white noise with covariance $$R_t$$. $$v_{t} \sim N\left(0, R_{t}\right)$$ 
 

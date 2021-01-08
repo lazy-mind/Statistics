@@ -59,6 +59,23 @@ We study the easiest one, ARCH\(1\), and we can do the following analysis:
 ## GARCH: Generalized ARCH
 
 {% tabs %}
+{% tab title="Example" %}
+Let's take a look at example GARCH\(1,1\)
+
+* $$\sigma_{t}^{2}=\omega+\alpha \varepsilon_{t-1}^{2}+\beta \sigma_{t-1}^{2}$$ 
+
+Interpretation of the parameters:
+
+* $$\omega, \alpha \text { and } \beta \text { must be positive with } \alpha+\beta<1$$ 
+* $$\alpha$$ is a reaction parameter. High $$\alpha$$ is generally associated with spiky or nervous market while low $$\alpha$$ indicates stable market. 
+  * Alexander \(2008\) considers that for daily data used in GARCH model, $$\alpha$$ generally ranges from 0.05 \(stable market\) to 0.10 for a spiky one.
+* $$\beta$$ indicates volatility persistence \(how much from past volatility is transferred into current volatility\). High $$\beta$$ means high persistency and therefore volatility clustering appears. 
+  * $$\beta$$ generally takes values from 0.85 to 0.98 for daily data used in the model according to Alexander \(2008\).
+* Low $$\alpha$$ values are associated with high $$\beta$$ 
+* high $$\alpha$$ is connected to low $$\beta$$ 
+* $$\frac{\omega}{1-\alpha-\beta}->\text { unconditional variance }$$ 
+{% endtab %}
+
 {% tab title="First Tab" %}
 ### TGARCH & EGARCH
 
@@ -75,23 +92,6 @@ We study the easiest one, ARCH\(1\), and we can do the following analysis:
 * \text { If } u\_{t-1}&lt;0 \text { its impact is } \ln \left\(h_{t}\right\) \text { is }-\alpha_{1}+\gamma\_{1}
 
 ### IGARCH
-{% endtab %}
-
-{% tab title="Example" %}
-Let's take a look at example GARCH\(1,1\)
-
-* $$\sigma_{t}^{2}=\omega+\alpha \varepsilon_{t-1}^{2}+\beta \sigma_{t-1}^{2}$$ 
-
-Interpretation of the parameters:
-
-* $$\omega, \alpha \text { and } \beta \text { must be positive with } \alpha+\beta<1$$ 
-* $$\alpha$$ is a reaction parameter. High $$\alpha$$ is generally associated with spiky or nervous market while low $$\alpha$$ indicates stable market. 
-  * Alexander \(2008\) considers that for daily data used in GARCH model, $$\alpha$$ generally ranges from 0.05 \(stable market\) to 0.10 for a spiky one.
-* $$\beta$$ indicates volatility persistence \(how much from past volatility is transferred into current volatility\). High $$\beta$$ means high persistency and therefore volatility clustering appears. 
-  * $$\beta$$ generally takes values from 0.85 to 0.98 for daily data used in the model according to Alexander \(2008\).
-* Low $$\alpha$$ values are associated with high $$\beta$$ 
-* high $$\alpha$$ is connected to low $$\beta$$ 
-* $$\frac{\omega}{1-\alpha-\beta}->\text { unconditional variance }$$ 
 {% endtab %}
 
 {% tab title="MLE of Linear Regression" %}

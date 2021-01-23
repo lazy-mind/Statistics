@@ -154,7 +154,7 @@ And we have the following properties:
 
 
 
-## Choosing the model
+## Choosing the model - Numerical Metrics
 
 {% tabs %}
 {% tab title="Box-Jenkins Method" %}

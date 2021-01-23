@@ -64,58 +64,73 @@ And we have the following properties:
 
 {% tabs %}
 {% tab title="AR" %}
-AR Process
+### Definition
 
-* Autoregressive means that "current value is impacted by past values"
+* AR: Autoregressive means that "**current value is impacted by past values**"
+
+### Examples
+
 * AR\(1\) means current value is impacted by previous value
   * $$y(T+1)=\alpha+\beta * y(T)$$ 
 * AR\(2\) means current value is impacted by previous 2 values
 
-Characteristics:
+### Statistical Characteristics
 
 * The ACF declines exponentially 
 * The PACF spikes on the first ****$$p$$ ****lag
 {% endtab %}
 
 {% tab title="MA" %}
-MA Process
+### Definition:
 
-* Moving Average means that "current value is impacted by previous \(unobserved\) random shocks"
+* MA: Moving Average means that "current value is **impacted by previous \(unobserved\) random shocks**"
 * Note that Moving Average **is not** the average over previous values!
+
+### Example
+
 * MA\(q\) means current value is impacted by previous q random shock
   * $$X_{t}=\mu+\varepsilon_{t}+\theta_{1} \varepsilon_{t-1}+\cdots+\theta_{q} \varepsilon_{t-q}$$ 
     * $$\mu \text { is the mean of the series }$$ 
     * $$\varepsilon_{t}, \varepsilon_{t-1}, \ldots, \varepsilon_{t-q} \text { is the white noise error terms }$$
   * $$X_{t}=\mu+\left(1+\theta_{1} B+\ldots+\theta_{q} B^{q}\right) \varepsilon_{t}$$ 
 
-Characteristics:
+### Statistical Characteristics
 
 * The ACF spikes on the first $$q$$ lag 
 * The PACF declines exponentially
 {% endtab %}
 
 {% tab title="ARMA" %}
+### Definition: ARIMA Process
+
+* Autoregressive moving average: is a combination of both AR and MA. Meaning the process can **be explained by auto-regressive component and moving-average component**
+
+### Example
+
 * An ARMA\(p, q\) can be expressed as:
   * $$y_{t}=a_{0}+\sum_{i=1}^{p} a_{i} y_{t-i}+\sum_{i=0}^{q} \beta_{i} \varepsilon_{t-i}$$ 
 * An ARMA\(m, n\) can also be expressed as:
   * $$\begin{aligned} \psi(L)\left(y_{t}-\mu\right) &=\Theta(L) \varepsilon_{t}-\mathrm{ARMA}(m, n) \\ \psi(L) &=1-\sum_{i=1}^{m} \psi_{i} L^{i} \\ \Theta(L) &=1-\sum_{i=1}^{n} \theta_{i} L^{i} \end{aligned}$$ 
 
-Characteristics:
+### Statistical Characteristics
 
 * decline on both ACF and the PACF
 {% endtab %}
 
 {% tab title="ARIMA" %}
-ARIMA Process
+### Definition: ARIMA Process
 
-* Autoregressive integrated moving average: is a combination of both AR and MA
+* Autoregressive integrated moving average: is a combination of both AR and MA. Meaning the process, after being integrated, can be explained by auto-regressive component and moving-average component
+
+### Example
+
 * ARIMA\(p, d, q\)
   * $$p-\text { the order of the autoregressive model }$$ 
   * $$d \text { - the order required to make the variable stationary }$$ 
   * $$q \text { - the order of the moving average model }$$ 
 * ARIMA\(1,1,1\) is the same with ARMA\(1,1\), the difference being the fact that the additional parameter in ARIMA indicates what type of updates we have to perform to the data before being introduced in the ARMA model.
 
-Characteristics:
+### Statistical Characteristics
 
 * ACF or PACF declines slowly
 * Large number of significant ACF or PACF indicates non-stationarity and need for further differencing
@@ -136,6 +151,8 @@ Characteristics:
 * Adding exogenous variables can improve ARMA predictions \(ARMAX model\)
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Choosing the model
 

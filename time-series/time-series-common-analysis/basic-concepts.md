@@ -20,15 +20,22 @@
 {% endtab %}
 
 {% tab title="Auto Correlation" %}
-It measures the linear Pearson correlation between observations **𝑘** time periods \(lags\) apart. If it differs significantly from zero, the serial dependence among the observations must be included as in an MA process
+### Definition: Auto Correlation
+
+* It is similar to correlation, but the 2 variables are in the same time-series, with k lags apart.
+* It measures the linear Pearson correlation between observations **𝑘** time periods \(lags\) apart. If it differs significantly from zero, the serial dependence among the observations must be included as in an MA process
 {% endtab %}
 
 {% tab title="Partial Auto Correlation" %}
+## Definition: 
+
 Similar to Auto Correlation, It measures the linear Pearson correlation between observations **𝑘** time periods \(lags\) apart. But it "partial out" the intervening lags. If it differs significantly from zero, the serial dependence among the observations must be included as in an AR process
 
 ![](../../.gitbook/assets/screen-shot-2020-12-31-at-6.17.03-pm.png)
 {% endtab %}
 {% endtabs %}
+
+
 
 {% tabs %}
 {% tab title="Lag Operator" %}

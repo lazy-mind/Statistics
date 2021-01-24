@@ -4,7 +4,17 @@
 
 {% tabs %}
 {% tab title="Overview" %}
-The conditional expectation of the process is modeled as ARMA process, but with errors that are not white noise
+## Definition:
+
+* It is used to describe periods of volatility in the process
+* "Heteroscedasitc": means that not all characteristics are the same at all time
+* "Conditional Heteroscedastic": means that at different timeframe the volatility is different.
+* "AutoRegressive Conditional Heteroscedastic": menas that the volatility is an autoregressive process, being determined by the past values
+* In another interpretation, we can say that: The conditional expectation of the process is modeled as ARMA process, but with errors that are not white noise
+
+## Real-life Meaning:
+
+* Imagine a stock market, at different years the market tends to be more volatile or less volatile.
 {% endtab %}
 
 {% tab title="Example" %}
@@ -14,7 +24,17 @@ Assume AR\(1\) process, but with non-white-noise error terms $$u_t$$ :
 
 * $$y_{t}=a_{0}+a_{1} y_{t-1}+u_{t}$$ 
 
-$$u_t$$ has the following structure:
+
+
+As we said in the overview, this error term can be different at different timepoint, and the its variance \(its volatility, which cause a non-constant volatility in the process\) should be modeled as an auto-regressive process. 
+
+That means we want: $$Var(\mu_t) = \sigma_t^2 = \alpha_0 + \alpha_1 \sigma_{t-1}^2$$ . Which models the variance of error as auto-regressive process.
+
+To let the variance has such feature, the error process should be modelled as: $$u_{t}=\varepsilon_{t} \sqrt{\omega+\alpha_{1} u_{t-1}^{2}}$$ 
+
+
+
+The error term: "$$u_t$$"  has the following structure:
 
 * Expectation remains 0: $$\mathbb{E}\left(u_{t}\right)=\mathbb{E}_{t-1}\left(u_{t}\right)=0$$ 
 * Errors are uncorrelated overtime: $$\mathbb{E}\left(u_{t} u_{t-s}\right)=0 \forall s>0$$ 

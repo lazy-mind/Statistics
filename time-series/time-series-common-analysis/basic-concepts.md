@@ -30,8 +30,13 @@
 ## Definition: Partial Auto Correlation
 
 * It measures the **direct** effect / correlation between variables k steps apart.
-* Direct effect is obtained and Intermediate effect is eliminated through applying a regression through those variables. And the coeffeicient will be that correlation.
+* Direct effect is obtained and Intermediate effect is eliminated through applying a regression through those variables.  \(Probably not true: And the coeffeicient will be that correlation.\)  $$\operatorname{PACF}(T_i, k)=\frac{ \operatorname{Covariance}\left(  \left[ \color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right], \left[ \color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]\right)}  {\sigma_{\left[\color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]}   \times   \sigma_{\left[\color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right]}}$$ 
 * Putting all coefficient into a graph, that is the PACF graph, so it tells us how strong the correlation is from variables k-step apart. Therefore decide far away we use in modeling AR process.
+
+## Reference
+
+* [Wiki - Rigious Math Representation of the PACF](https://en.wikipedia.org/wiki/Partial_autocorrelation_function)
+* [Web Post - Detail Illustration on deriving formula for PACF](https://towardsdatascience.com/understanding-partial-auto-correlation-fa39271146ac)
 
 Similar to Auto Correlation, It measures the linear Pearson correlation between observations **𝑘** time periods \(lags\) apart. But it "partial out" the intervening lags. If it differs significantly from zero, the serial dependence among the observations must be included as in an AR process
 {% endtab %}

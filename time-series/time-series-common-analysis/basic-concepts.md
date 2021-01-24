@@ -30,7 +30,8 @@
 ## Definition: Partial Auto Correlation
 
 * It measures the **direct** effect / correlation between variables k steps apart.
-* Direct effect is obtained and Intermediate effect is eliminated through applying a regression through those variables.  \(Probably not true: And the coeffeicient will be that correlation.\)  $$\operatorname{PACF}(T_i, k)=\frac{ \operatorname{Covariance}\left(  \left[ \color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right], \left[ \color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]\right)}  {\sigma_{\left[\color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]}   \times   \sigma_{\left[\color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right]}}$$ 
+* Direct effect is obtained and Intermediate effect is eliminated through applying a regression through those variables.  \(Probably not true: And the coeffeicient will be that correlation.\) 
+* The PACF is the residual not explained by the intermediate process, as formulated in the expression here:$$\operatorname{PACF}(T_i, k)=\frac{ \operatorname{Covariance}\left(  \left[ \color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right], \left[ \color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]\right)}  {\sigma_{\left[\color{red}T_{i} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)}\right]}   \times   \sigma_{\left[\color{blue}T_{(i-k)} \mid T_{(i-1)}, T_{(i-2)} \ldots T_{(i-k+1)} \right]}}$$ 
 * Putting all coefficient into a graph, that is the PACF graph, so it tells us how strong the correlation is from variables k-step apart. Therefore decide far away we use in modeling AR process.
 
 ## Reference

@@ -15,6 +15,10 @@
 ## Real-life Meaning:
 
 * Imagine a stock market, at different years the market tends to be more volatile or less volatile.
+
+## Reference:
+
+* [Quick video to make sense of the ARCH model, what it is -- Youtube](https://www.youtube.com/watch?v=Li95a2biFCU)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -75,6 +79,8 @@ We study the easiest one, ARCH\(1\), and we can do the following analysis:
 
 {% endtab %}
 {% endtabs %}
+
+
 
 ## GARCH: Generalized ARCH
 

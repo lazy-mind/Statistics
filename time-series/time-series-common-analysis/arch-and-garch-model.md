@@ -30,7 +30,7 @@ As we said in the overview, this error term can be different at different timepo
 
 That means we want: $$Var(\mu_t) = \sigma_t^2 = \alpha_0 + \alpha_1 \sigma_{t-1}^2$$ . Which models the variance of error as auto-regressive process.
 
-To let the variance has such feature, the error process should be modelled as: $$u_{t}=\varepsilon_{t} \sqrt{\omega+\alpha_{1} u_{t-1}^{2}}$$ 
+To let the variance has such feature, the error process should be modelled as: $$u_{t}=\varepsilon_{t} \sqrt{\omega+\alpha_{1} u_{t-1}^{2}}$$ . 
 
 
 

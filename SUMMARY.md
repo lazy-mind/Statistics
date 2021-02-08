@@ -10,6 +10,7 @@
   * [Basic Theories](basic-statistics/low-level-undergrad-statistics/untitled.md)
 * [Advance Undergrad Statistics](basic-statistics/advance-undergrad-statistics.md)
 * [Statistics Figure](basic-statistics/statistics-figure.md)
+* [Statistics Test](basic-statistics/statistics-test.md)
 * [Untitled](basic-statistics/untitled.md)
 
 ## Time Series

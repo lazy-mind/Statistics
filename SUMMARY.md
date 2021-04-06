@@ -12,6 +12,8 @@
 * [Statistics Figure](basic-statistics/statistics-figure.md)
 * [Statistics Test](basic-statistics/statistics-test.md)
 * [Untitled](basic-statistics/untitled.md)
+* [Statistical Sampling](basic-statistics/statistical-sampling/README.md)
+  * [Statistical Simulation in Finance](basic-statistics/statistical-sampling/statistical-simulation-in-finance.md)
 
 ## Time Series
 

@@ -74,6 +74,10 @@ $$
 
 ## Variance Reduction Technique
 
+{% embed url="https://www.math.pku.edu.cn/teachers/lidf/docs/statcomp/html/\_statcompbook/sim-impsamp.html" %}
+
+
+
 {% tabs %}
 {% tab title="Antithetic Variable" %}
 

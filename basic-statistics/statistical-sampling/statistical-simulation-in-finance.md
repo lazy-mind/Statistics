@@ -98,3 +98,5 @@ $$
 
 ## Markov Chain Monte Carlo Methods
 
+## Least Square MC
+

@@ -96,6 +96,10 @@ $$
 {% endtab %}
 {% endtabs %}
 
+## Monte Carlo
+
+{% embed url="https://en.wikipedia.org/wiki/Monte\_Carlo\_methods\_for\_option\_pricing\#Least\_Square\_Monte\_Carlo" %}
+
 ## Markov Chain Monte Carlo Methods
 
 ## Least Square MC
